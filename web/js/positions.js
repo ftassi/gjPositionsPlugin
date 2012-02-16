@@ -1,20 +1,17 @@
 $(document).ready(function(){
   $('.composition-canvas').compositionCanvas();
-  contentList = $('#gj_page_admin_content_elements');
-  contentListPosition = contentList.offset();
-  contentList.css({
-      'height': $(window).height() - contentListPosition.top,
-      'position': 'fixed',
-      'overflow': 'auto'
-  })
-  
-  designElementsList = $('#gj_page_admin_design_elements');
-  designElementsListPosition = designElementsList.offset();
-  designElementsList.css({
-      'height': $(window).height() - designElementsListPosition.top,
-      'position': 'fixed',
-      'overflow': 'auto'
-  })
+  fixList($('#gj_page_admin_content_elements'));
+  fixList($('#gj_page_admin_design_elements'));
 });
+
+function fixList(list){
+    
+  listPosition = list.offset();
+  list.css({
+      'height': $(window).height() - listPosition.top,
+      'position': 'fixed',
+      'overflow': 'auto'
+  })
+}
 
     
